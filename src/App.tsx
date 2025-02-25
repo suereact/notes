@@ -1,13 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Notes from "./components/Notes";
 import LoginPage from "./components/LoginPage";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Auth from "./components/Auth"; // 👈 Добавляем компонент авторизации
+import Auth from "./components/Auth"; 
 
 export default function App() {
   return (
     <>
-      <Auth /> {/* 👈 Показываем кнопку входа/выхода */}
+      <Auth />
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route

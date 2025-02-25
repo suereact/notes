@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { onAuthStateChangedListener } from "../services/authService";
-import { User } from "firebase/auth"; // ✅ Добавляем импорт
+import { User } from "firebase/auth";
 
 export default function ProtectedRoute({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);

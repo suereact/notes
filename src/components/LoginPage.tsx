@@ -10,7 +10,7 @@ export default function LoginPage() {
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
       if (user) {
-        navigate("/"); // ✅ Если пользователь вошел, переходим на главную страницу
+        navigate("/"); 
       }
       setLoading(false);
     });

@@ -6,7 +6,6 @@ import {
 } from "firebase/auth";
 import { auth, googleProvider } from "./firebase";
 
-// 📌 Вход через Google
 export const signInWithGoogle = async (): Promise<User | null> => {
   try {
     const result = await signInWithPopup(auth, googleProvider);
@@ -17,7 +16,6 @@ export const signInWithGoogle = async (): Promise<User | null> => {
   }
 };
 
-// 📌 Выход из системы
 export const logOut = async () => {
   try {
     await signOut(auth);
@@ -27,7 +25,6 @@ export const logOut = async () => {
   }
 };
 
-// 📌 Отслеживание состояния пользователя
 export const onAuthStateChangedListener = (
   callback: (user: User | null) => void
 ) => {

@@ -1,4 +1,3 @@
-// notesService.ts
 import {
   collection,
   addDoc,
@@ -24,5 +23,5 @@ export const getNotes = async (userId: string) => {
 
 export const deleteNote = async (userId: string, id: string) => {
   const noteRef = doc(db, "users", userId, "notes", id);
-  await deleteDoc(noteRef); // ✅ Используем правильное название переменной
+  await deleteDoc(noteRef);
 };
