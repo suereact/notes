@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { addNote, getNotes, deleteNote } from "../services/notesService";
 import { onAuthStateChangedListener } from "../services/authService";
+import NotesList from "./notes/NotesList";
+import CreateNote from "./notes/CreateNote";
 
 export default function Notes() {
   const [notes, setNotes] = useState<{ id: string; text: string }[]>([]);
@@ -43,26 +45,18 @@ export default function Notes() {
     }
   };
 
-  if (!userId) return <p>Войди в аккаунт, чтобы управлять заметками.</p>;
+  if (!userId) return <p>Sign in to your account to manage your notes.</p>;
 
   return (
     <div>
-      <h1>Мои заметки</h1>
-      <input
-        value={newNote}
-        onChange={(e) => setNewNote(e.target.value)}
-        placeholder="Введите заметку"
-      />
-      <button onClick={handleAddNote}>Добавить</button>
+      <h1>My Notes</h1>
 
-      <ul>
-        {notes.map((note) => (
-          <li key={note.id}>
-            {note.text}
-            <button onClick={() => handleDeleteNote(note.id)}>Удалить</button>
-          </li>
-        ))}
-      </ul>
+      <CreateNote
+        newNote={newNote}
+        setNewNote={setNewNote}
+        handleAddNote={handleAddNote}
+      />
+      <NotesList notes={notes} handleDeleteNote={handleDeleteNote} />
     </div>
   );
 }

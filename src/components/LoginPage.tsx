@@ -10,7 +10,7 @@ export default function LoginPage() {
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
       if (user) {
-        navigate("/"); 
+        navigate("/");
       }
       setLoading(false);
     });
@@ -18,13 +18,14 @@ export default function LoginPage() {
   }, [navigate]);
 
   if (loading) {
-    return <p>Загрузка...</p>;
+    return <p>Loading...</p>;
   }
 
   return (
     <div>
-      <h1>Вход в приложение</h1>
-      <button onClick={signInWithGoogle}>Войти через Google</button>
+      <h1>The notebook</h1>
+      <p>This book is protected. Please log in</p>
+      <button onClick={signInWithGoogle}>Sign in with Google</button>
     </div>
   );
 }

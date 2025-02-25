@@ -1,19 +1,18 @@
 import { Routes, Route } from "react-router-dom";
 import Notes from "./components/Notes";
-import LoginPage from "./components/LoginPage";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Auth from "./components/Auth"; 
+import Auth from "./components/Auth";
 
 export default function App() {
   return (
     <>
-      <Auth />
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<Auth />} />
         <Route
           path="/"
           element={
             <ProtectedRoute>
+              <Auth />
               <Notes />
             </ProtectedRoute>
           }

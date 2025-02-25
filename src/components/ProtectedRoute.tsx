@@ -16,7 +16,7 @@ export default function ProtectedRoute({ children }: { children: ReactNode }) {
   }, []);
 
   if (loading) {
-    return <div>Загрузка...</div>;
+    return <div>Loading...</div>;
   }
 
   return user ? <>{children}</> : <Navigate to="/login" replace />;

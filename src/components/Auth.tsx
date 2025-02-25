@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
-import {
-  signInWithGoogle,
-  logOut,
-  onAuthStateChangedListener,
-} from "../services/authService";
+import { logOut, onAuthStateChangedListener } from "../services/authService";
 import { User } from "firebase/auth";
+import LoginPage from "./LoginPage";
 
 export default function Auth() {
   const [user, setUser] = useState<User | null>(null);
@@ -18,12 +15,12 @@ export default function Auth() {
     <div>
       {user ? (
         <div>
-          <p>Привет, {user.displayName}!</p>
-          <img src={user.photoURL || ""} alt="Аватар" width={50} />
-          <button onClick={logOut}>Выйти</button>
+          <p>Hi, {user.displayName}!</p>
+          <img src={user.photoURL || ""} alt="Profile photo" width={50} />
+          <button onClick={logOut}>Log Out</button>
         </div>
       ) : (
-        <button onClick={signInWithGoogle}>Войти через Google</button>
+        <LoginPage />
       )}
     </div>
   );

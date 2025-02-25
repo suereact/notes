@@ -11,7 +11,7 @@ export const signInWithGoogle = async (): Promise<User | null> => {
     const result = await signInWithPopup(auth, googleProvider);
     return result.user;
   } catch (error) {
-    console.error("Ошибка входа:", error);
+    console.error("Sign in error:", error);
     return null;
   }
 };
@@ -19,9 +19,9 @@ export const signInWithGoogle = async (): Promise<User | null> => {
 export const logOut = async () => {
   try {
     await signOut(auth);
-    console.log("Выход выполнен");
+    console.log("Log out successful");
   } catch (error) {
-    console.error("Ошибка выхода:", error);
+    console.error("Log out error:", error);
   }
 };
 
