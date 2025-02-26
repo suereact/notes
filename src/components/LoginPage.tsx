@@ -22,10 +22,13 @@ export default function LoginPage() {
   }
 
   return (
-    <div>
-      <h1>The notebook</h1>
-      <p>This book is protected. Please log in</p>
-      <button onClick={signInWithGoogle}>Sign in with Google</button>
+    <div className="flex flex-col items-center justify-between h-[800px]">
+      <h1 className="text-9xl">The notebook</h1>
+      <div>
+        <p>This book is protected.</p>
+        <button onClick={signInWithGoogle}>Log in with Google</button>
+        {/* TODO:add a lock icon with unimation to unlock when hover */}
+      </div>
     </div>
   );
 }
