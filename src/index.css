@@ -6,4 +6,6 @@ body {
   align-items: center;
   justify-content: center;
   background-image: url("/Users/sue/Documents/GitHub/notes/src/assets/Wooden-Natural-Floor-Decoration.jpg");
+  background-color: black;
+  background-size: cover;
 }
