@@ -1,5 +1,7 @@
 .app {
-  background-color: green;
+  background: url("./assets/leather-texture.jpg");
+  background-size: cover;
+  background-position: center;
   width: 600px;
   height: 900px;
   position: absolute;
@@ -7,8 +9,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px 40px 40px 10px;
-  box-shadow: 2px 9px 100px 11px rgba(0, 0, 0, 0.6),
-    0px 12px 22px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 2px 9px 100px 11px rgba(0, 0, 0, 0.6),
+    0px 12px 22px rgba(0, 0, 0, 0.2); */
   padding: 30px;
 }
 .app::before {
